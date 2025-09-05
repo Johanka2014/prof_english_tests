@@ -1,0 +1,263 @@
+import React, { useState, useEffect } from 'react';
+import { getAuth, signInAnonymously, signInWithCustomToken } from 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+
+// DO NOT USE THIS, CANVAS WILL OVERWRITE IT
+const __firebase_config = '{}';
+const __initial_auth_token = '';
+const __app_id = '';
+
+// Data for the activity
+const activityData = [
+  {
+    question: "Olga Blanc is _______ computers.",
+    correctAnswer: ["in"],
+    options: ["in", "on", "for"],
+    type: "single",
+  },
+  {
+    question: "She has been working _______ a big computer company for five years.",
+    correctAnswer: ["for"],
+    options: ["in", "on", "for"],
+    type: "single",
+  },
+  {
+    question: "She is based _______ Paris.",
+    correctAnswer: ["in"],
+    options: ["in", "on", "for"],
+    type: "single",
+  },
+  {
+    question: "She works _______ the external communications department.",
+    correctAnswer: ["for"],
+    options: ["in", "on", "for"],
+    type: "single",
+  },
+  {
+    question: "At the moment she is working _______ the design of the company's website.",
+    correctAnswer: ["on"],
+    options: ["in", "on", "for"],
+    type: "single",
+  },
+  {
+    question: "She is responsible _______ the development of an important part of the site.",
+    correctAnswer: ["for"],
+    options: ["in", "on", "for"],
+    type: "single",
+  },
+  {
+    question: "She is very interested _______ Website design.",
+    correctAnswer: ["in"],
+    options: ["in", "on", "for"],
+    type: "single",
+  },
+  {
+    question: "She depends _______ the web and on personal contacts for new ideas.",
+    correctAnswer: ["on"],
+    options: ["in", "on", "for"],
+    type: "single",
+  },
+  {
+    question: "She spends one or two hours every day on the Web getting information _______ all the latest developments.",
+    correctAnswer: ["on"],
+    options: ["in", "on", "for"],
+    type: "single",
+  },
+  {
+    question: "She is happy because there is a big demand _______ good website designers at the moment.",
+    correctAnswer: ["for"],
+    options: ["in", "on", "for"],
+    type: "single",
+  },
+];
+
+const App = () => {
+  const [currentPage, setCurrentPage] = useState('intro');
+  const [answers, setAnswers] = useState({});
+  const [showResults, setShowResults] = useState(false);
+  const [score, setScore] = useState(0);
+
+  // State to hold Firebase instances
+  const [firebase, setFirebase] = useState({ app: null, auth: null, db: null });
+
+  useEffect(() => {
+    const initFirebase = async () => {
+      // Check if the Firebase config is a non-empty string before parsing
+      if (typeof __firebase_config !== 'string' || __firebase_config.length <= 2) {
+        console.warn('Firebase configuration is not available. Skipping Firebase initialization.');
+        return;
+      }
+
+      try {
+        const firebaseConfig = JSON.parse(__firebase_config);
+        const app = initializeApp(firebaseConfig);
+        const newAuth = getAuth(app);
+        const newDb = getFirestore(app);
+
+        setFirebase({ app, auth: newAuth, db: newDb });
+
+        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+          console.log('Signing in with custom token...');
+          await signInWithCustomToken(newAuth, __initial_auth_token);
+        } else {
+          console.log('Signing in anonymously...');
+          await signInAnonymously(newAuth);
+        }
+        console.log('Authentication successful!');
+      } catch (error) {
+        console.error('Firebase initialization or authentication failed:', error);
+        console.error('Firebase Auth Error Code:', error.code);
+        console.error('Firebase Auth Error Message:', error.message);
+      }
+    };
+    initFirebase();
+  }, []);
+
+  const handleAnswerChange = (index, value) => {
+    setAnswers({
+      ...answers,
+      [index]: value,
+    });
+  };
+
+  const handleSubmit = () => {
+    let newScore = 0;
+    activityData.forEach((item, index) => {
+      if (answers[index] && item.correctAnswer.includes(answers[index])) {
+        newScore += 1;
+      }
+    });
+    setScore(newScore);
+    setShowResults(true);
+  };
+
+  const renderContent = () => {
+    if (currentPage === 'intro') {
+      return (
+        <div className="flex flex-col items-center justify-center h-full p-4 md:p-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-blue-900 drop-shadow-lg text-center mb-8">
+            Professional English for Business
+          </h1>
+          <div className="w-full max-w-2xl bg-white bg-opacity-80 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-105 mb-8">
+            <img
+              src="https://johanka2014.github.io/prof_english_tests/prof_eng_banner.png"
+              alt="Professional English for Business Banner"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      );
+    } else if (currentPage === 'activity-1') {
+      return (
+        <div className="p-4 md:p-8 flex flex-col items-center justify-center">
+          {/* Activity */}
+          <div className="w-full p-6 bg-white bg-opacity-80 rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-105">
+            <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-6">
+              Activity 1: Fill in the blanks
+            </h2>
+            <p className="text-md sm:text-lg text-gray-700 mb-6">
+              Complete each of the following sentences with <span className="font-semibold text-blue-600">in</span>, <span className="font-semibold text-blue-600">on</span> or <span className="font-semibold text-blue-600">for</span>.
+            </p>
+            {activityData.map((item, index) => (
+              <div key={index} className="flex flex-col mb-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
+                <p className="text-gray-800 mb-2">
+                  <span className="font-medium mr-2">{index + 1}.</span> {item.question}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {item.options.map((option, optIndex) => (
+                    <button
+                      key={optIndex}
+                      onClick={() => handleAnswerChange(index, option)}
+                      className={`
+                        px-4 py-2 text-sm sm:text-base rounded-full shadow-md transition-all duration-300 transform
+                        ${answers[index] === option
+                          ? 'bg-blue-600 text-white scale-105'
+                          : 'bg-white text-blue-600 hover:bg-blue-100 hover:scale-105'
+                        }
+                      `}
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+            <button
+              onClick={handleSubmit}
+              className="w-full mt-6 py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              Check Answers
+            </button>
+            {showResults && (
+              <div className="mt-8 p-6 bg-blue-100 rounded-3xl shadow-inner">
+                <h3 className="text-xl font-bold text-blue-800 mb-4">Your Results</h3>
+                <p className="text-lg text-gray-700 mb-4">
+                  You scored <span className="font-extrabold text-2xl text-blue-900">{score}</span> out of {activityData.length}.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {activityData.map((item, index) => (
+                    <div key={index} className="p-3 rounded-lg bg-white shadow-sm flex items-center">
+                      <span className="font-medium mr-2">{index + 1}.</span>
+                      <span className={`${answers[index] && item.correctAnswer.includes(answers[index]) ? 'text-green-600' : 'text-red-600'}`}>
+                        {answers[index] || 'No Answer'}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    }
+    return null;
+  };
+
+  return (
+    <div className="min-h-screen font-sans text-gray-800 bg-gradient-to-br from-blue-50 to-blue-200 p-4 md:p-8">
+      {/* Navigation */}
+      <nav className="bg-white bg-opacity-70 backdrop-blur-lg rounded-full shadow-xl p-3 md:p-4 mb-8 sticky top-4 z-50 flex justify-center">
+        <ul className="flex space-x-2 sm:space-x-4">
+          <li>
+            <button
+              onClick={() => {
+                setCurrentPage('intro');
+                setShowResults(false);
+                setAnswers({});
+              }}
+              className={`
+                px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold rounded-full transition-all duration-300 transform
+                ${currentPage === 'intro' ? 'bg-blue-600 text-white shadow-lg scale-105' : 'bg-blue-200 text-blue-800 hover:bg-blue-300'}
+              `}
+            >
+              Intro
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                setCurrentPage('activity-1');
+                setShowResults(false);
+                setAnswers({});
+              }}
+              className={`
+                px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold rounded-full transition-all duration-300 transform
+                ${currentPage === 'activity-1' ? 'bg-blue-600 text-white shadow-lg scale-105' : 'bg-blue-200 text-blue-800 hover:bg-blue-300'}
+              `}
+            >
+              Activity 1
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      {/* Main Content */}
+      <main className="container mx-auto">
+        {renderContent()}
+      </main>
+    </div>
+  );
+};
+
+export default App;

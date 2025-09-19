@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Professional English for Business</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
@@ -16,176 +16,463 @@
 </head>
 <body class="min-h-screen text-gray-800 bg-gradient-to-br from-blue-50 to-blue-200">
 
-    <!-- Navigation -->
-    <nav class="bg-white bg-opacity-70 backdrop-blur-lg rounded-full shadow-xl p-3 md:p-4 mb-8 sticky top-4 z-50 flex justify-center mx-auto max-w-2xl mt-4">
-        <ul class="flex space-x-2 sm:space-x-4" id="nav-buttons">
-            <li>
-                <button id="intro-btn" class="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold rounded-full transition-all duration-300 transform bg-blue-600 text-white shadow-lg scale-105">
-                    Intro
-                </button>
-            </li>
-            <li>
-                <button id="activity1-btn" class="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold rounded-full transition-all duration-300 transform bg-blue-200 text-blue-800 hover:bg-blue-300">
-                    Activity 1
-                </button>
-            </li>
-        </ul>
-    </nav>
-
     <!-- Main Content Container -->
     <main id="content-container" class="container mx-auto p-4 md:p-8">
-        <!-- Content will be injected here by JavaScript -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-blue-900 drop-shadow-lg text-center mb-8">
+            Professional English for Business
+        </h1>
+
+        <!-- Activity 1 Section -->
+        <div class="p-4 md:p-8 flex flex-col items-center justify-center mb-12">
+            <div class="w-full p-6 bg-white bg-opacity-80 rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-105">
+                <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mb-6">
+                    Activity 1: Your job
+                </h2>
+                <p class="text-md sm:text-lg text-gray-700 mb-6">
+                    Complete each of the following sentences with <span class="font-semibold text-blue-600">in</span>, <span class="font-semibold text-blue-600">on</span> or <span class="font-semibold text-blue-600">for</span>.
+                </p>
+                <div id="questions-container-1"></div>
+                <button
+                    id="submit-btn-1"
+                    class="w-full mt-6 py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                    onclick="handleSubmit(1)"
+                >
+                    Check Answers
+                </button>
+                <div id="results-container-1" class="hidden"></div>
+            </div>
+        </div>
+
+        <!-- Activity 2 Section -->
+        <div class="p-4 md:p-8 flex flex-col items-center justify-center mb-12">
+            <div class="w-full p-6 bg-white bg-opacity-80 rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-105">
+                <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mb-6">
+                    Activity 2: Your company
+                </h2>
+                <p class="text-md sm:text-lg text-gray-700 mb-6">
+                    Fill in the missing words in the sentences below. Choose from the words in the box.
+                </p>
+                <div id="questions-container-2"></div>
+                <button
+                    id="submit-btn-2"
+                    class="w-full mt-6 py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                    onclick="handleSubmit(2)"
+                >
+                    Check Answers
+                </button>
+                <div id="results-container-2" class="hidden"></div>
+            </div>
+        </div>
+
+        <!-- Activity 3 Section -->
+        <div class="p-4 md:p-8 flex flex-col items-center justify-center mb-12">
+            <div class="w-full p-6 bg-white bg-opacity-80 rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-105">
+                <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mb-6">
+                    Activity 3: Your daily routine
+                </h2>
+                <p class="text-md sm:text-lg text-gray-700 mb-6">
+                    Match the beginning of each sentence on the left with a phrase on the right.
+                </p>
+                <div id="questions-container-3"></div>
+                <button
+                    id="submit-btn-3"
+                    class="w-full mt-6 py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                    onclick="handleSubmit(3)"
+                >
+                    Check Answers
+                </button>
+                <div id="results-container-3" class="hidden"></div>
+            </div>
+        </div>
+
+        <!-- Activity 4 Section -->
+        <div class="p-4 md:p-8 flex flex-col items-center justify-center mb-12">
+            <div class="w-full p-6 bg-white bg-opacity-80 rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-105">
+                <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mb-6">
+                    Activity 4: The people you talk to
+                </h2>
+                <p class="text-md sm:text-lg text-gray-700 mb-6">
+                    Choose one word or phrase from the box to complete each sentence.
+                </p>
+                <div id="questions-container-4"></div>
+                <button
+                    id="submit-btn-4"
+                    class="w-full mt-6 py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                    onclick="handleSubmit(4)"
+                >
+                    Check Answers
+                </button>
+                <div id="results-container-4" class="hidden"></div>
+            </div>
+        </div>
+
+        <!-- Activity 5 Section -->
+        <div class="p-4 md:p-8 flex flex-col items-center justify-center mb-12">
+            <div class="w-full p-6 bg-white bg-opacity-80 rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-105">
+                <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mb-6">
+                    Activity 5: Your pay
+                </h2>
+                <p class="text-md sm:text-lg text-gray-700 mb-6">
+                    You have just agreed your pay with the Board. Fill in the missing words in the sentences below.
+                </p>
+                <div id="questions-container-5"></div>
+                <button
+                    id="submit-btn-5"
+                    class="w-full mt-6 py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                    onclick="handleSubmit(5)"
+                >
+                    Check Answers
+                </button>
+                <div id="results-container-5" class="hidden"></div>
+            </div>
+        </div>
+
+        <!-- Activity 6 Section -->
+        <div class="p-4 md:p-8 flex flex-col items-center justify-center">
+            <div class="w-full p-6 bg-white bg-opacity-80 rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-105">
+                <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mb-6">
+                    Activity 6: Your career
+                </h2>
+                <p class="text-md sm:text-lg text-gray-700 mb-6">
+                    Fill in the missing letters from the key words. Take care with the correct form of the verb.
+                </p>
+                <div id="questions-container-6"></div>
+                <button
+                    id="submit-btn-6"
+                    class="w-full mt-6 py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                    onclick="handleSubmit(6)"
+                >
+                    Check Answers
+                </button>
+                <div id="results-container-6" class="hidden"></div>
+            </div>
+        </div>
     </main>
 
     <script>
-        // Data for the activity
-        const activityData = [
-            {
-                question: "Olga Blanc is _______ computers.",
-                correctAnswer: "in",
-                options: ["in", "on", "for"],
-            },
-            {
-                question: "She has been working _______ a big computer company for five years.",
-                correctAnswer: "for",
-                options: ["in", "on", "for"],
-            },
-            {
-                question: "She is based _______ Paris.",
-                correctAnswer: "in",
-                options: ["in", "on", "for"],
-            },
-            {
-                question: "She works _______ the external communications department.",
-                correctAnswer: "for",
-                options: ["in", "on", "for"],
-            },
-            {
-                question: "At the moment she is working _______ the design of the company's website.",
-                correctAnswer: "on",
-                options: ["in", "on", "for"],
-            },
-            {
-                question: "She is responsible _______ the development of an important part of the site.",
-                correctAnswer: "for",
-                options: ["in", "on", "for"],
-            },
-            {
-                question: "She is very interested _______ Website design.",
-                correctAnswer: "in",
-                options: ["in", "on", "for"],
-            },
-            {
-                question: "She depends _______ the web and on personal contacts for new ideas.",
-                correctAnswer: "on",
-                options: ["in", "on", "for"],
-            },
-            {
-                question: "She spends one or two hours every day on the Web getting information _______ all the latest developments.",
-                correctAnswer: "on",
-                options: ["in", "on", "for"],
-            },
-            {
-                question: "She is happy because there is a big demand _______ good website designers at the moment.",
-                correctAnswer: "for",
-                options: ["in", "on", "for"],
-            },
+        // Data for the activities
+        const activity1Data = [
+            { question: "Olga Blanc is _______ computers.", correctAnswer: "in", options: ["in", "on", "for"] },
+            { question: "She has been working _______ a big computer company for five years.", correctAnswer: "for", options: ["in", "on", "for"] },
+            { question: "She is based _______ Paris.", correctAnswer: "in", options: ["in", "on", "for"] },
+            { question: "She works _______ the external communications department.", correctAnswer: "for", options: ["in", "on", "for"] },
+            { question: "At the moment she is working _______ the design of the company's website.", correctAnswer: "on", options: ["in", "on", "for"] },
+            { question: "She is responsible _______ the development of an important part of the site.", correctAnswer: "for", options: ["in", "on", "for"] },
+            { question: "She is very interested _______ Website design.", correctAnswer: "in", options: ["in", "on", "for"] },
+            { question: "She depends _______ the web and on personal contacts for new ideas.", correctAnswer: "on", options: ["in", "on", "for"] },
+            { question: "She spends one or two hours every day on the Web getting information _______ all the latest developments.", correctAnswer: "on", options: ["in", "on", "for"] },
+            { question: "She is happy because there is a big demand _______ good website designers at the moment.", correctAnswer: "for", options: ["in", "on", "for"] },
+        ];
+        
+        const activity2Data = [
+            { question: "I work for a _______ called Kwikshoe.", correctAnswer: "company", options: ["company", "competitors", "customers", "employees", "leader", "products", "profit", "share", "shareholders", "share price", "subsidiaries", "turnover"] },
+            { question: "Our main _______ are sports shoes.", correctAnswer: "products", options: ["company", "competitors", "customers", "employees", "leader", "products", "profit", "share", "shareholders", "share price", "subsidiaries", "turnover"] },
+            { question: "Kwikshoe is a world _______ in the tennis shoe sector.", correctAnswer: "leader", options: ["company", "competitors", "customers", "employees", "leader", "products", "profit", "share", "shareholders", "share price", "subsidiaries", "turnover"] },
+            { question: "It has a national market _______ of 23%.", correctAnswer: "share", options: ["company", "competitors", "customers", "employees", "leader", "products", "profit", "share", "shareholders", "share price", "subsidiaries", "turnover"] },
+            { question: "It has 2,500 _______ in this country.", correctAnswer: "employees", options: ["company", "competitors", "customers", "employees", "leader", "products", "profit", "share", "shareholders", "share price", "subsidiaries", "turnover"] },
+            { question: "It has seven _______ in five different countries.", correctAnswer: "subsidiaries", options: ["company", "competitors", "customers", "employees", "leader", "products", "profit", "share", "shareholders", "share price", "subsidiaries", "turnover"] },
+            { question: "Its main _______ are young people and people who do sport.", correctAnswer: "customers", options: ["company", "competitors", "customers", "employees", "leader", "products", "profit", "share", "shareholders", "share price", "subsidiaries", "turnover"] },
+            { question: "Its main _______ are in Britain and the USA.", correctAnswer: "competitors", options: ["company", "competitors", "customers", "employees", "leader", "products", "profit", "share", "shareholders", "share price", "subsidiaries", "turnover"] },
+            { question: "Its main _______ are banks and pension funds.", correctAnswer: "shareholders", options: ["company", "competitors", "customers", "employees", "leader", "products", "profit", "share", "shareholders", "share price", "subsidiaries", "turnover"] },
+            { question: "Its _______ last year was $1.2 billion.", correctAnswer: "turnover", options: ["company", "competitors", "customers", "employees", "leader", "products", "profit", "share", "shareholders", "share price", "subsidiaries", "turnover"] },
+            { question: "Its _______ last year was $16 million.", correctAnswer: "profit", options: ["company", "competitors", "customers", "employees", "leader", "products", "profit", "share", "shareholders", "share price", "subsidiaries", "turnover"] },
+            { question: "Its _______ today is $57.", correctAnswer: "share price", options: ["company", "competitors", "customers", "employees", "leader", "products", "profit", "share", "shareholders", "share price", "subsidiaries", "turnover"] },
+        ];
+        
+        const activity3Data = [
+            { question: "1. I looked at", correctAnswer: "j", options: [{ label: "a. the monthly figures to Mr Kazoulis.", value: "a" }, { label: "b. an appointment with a client.", value: "b" }, { label: "c. the minutes of the meeting.", value: "c" }, { label: "d. a representative of the safety committee.", value: "d" }, { label: "e. the company magazine.", value: "e" }, { label: "f. three or four replies.", value: "f" }, { label: "g. two or three telephone calls.", value: "g" }, { label: "h. the office Christmas party with Cynthia.", value: "h" }, { label: "i. a $10 million deal.", value: "i" }, { label: "j. my e-mails.", value: "j" }, { label: "k. lunch with Tom in Accounts.", value: "k" }, { label: "l. tired but happy.", value: "l" }, { label: "m. the weekly departmental meeting.", value: "m" }] },
+            { question: "2. I wrote", correctAnswer: "f", options: [{ label: "a. the monthly figures to Mr Kazoulis.", value: "a" }, { label: "b. an appointment with a client.", value: "b" }, { label: "c. the minutes of the meeting.", value: "c" }, { label: "d. a representative of the safety committee.", value: "d" }, { label: "e. the company magazine.", value: "e" }, { label: "f. three or four replies.", value: "f" }, { label: "g. two or three telephone calls.", value: "g" }, { label: "h. the office Christmas party with Cynthia.", value: "h" }, { label: "i. a $10 million deal.", value: "i" }, { label: "j. my e-mails.", value: "j" }, { label: "k. lunch with Tom in Accounts.", value: "k" }, { label: "l. tired but happy.", value: "l" }, { label: "m. the weekly departmental meeting.", value: "m" }] },
+            { question: "3. I made", correctAnswer: "b", options: [{ label: "a. the monthly figures to Mr Kazoulis.", value: "a" }, { label: "b. an appointment with a client.", value: "b" }, { label: "c. the minutes of the meeting.", value: "c" }, { label: "d. a representative of the safety committee.", value: "d" }, { label: "e. the company magazine.", value: "e" }, { label: "f. three or four replies.", value: "f" }, { label: "g. two or three telephone calls.", value: "g" }, { label: "h. the office Christmas party with Cynthia.", value: "h" }, { label: "i. a $10 million deal.", value: "i" }, { label: "j. my e-mails.", value: "j" }, { label: "k. lunch with Tom in Accounts.", value: "k" }, { label: "l. tired but happy.", value: "l" }, { label: "m. the weekly departmental meeting.", value: "m" }] },
+            { question: "4. I went to", correctAnswer: "d", options: [{ label: "a. the monthly figures to Mr Kazoulis.", value: "a" }, { label: "b. an appointment with a client.", value: "b" }, { label: "c. the minutes of the meeting.", value: "c" }, { label: "d. a representative of the safety committee.", value: "d" }, { label: "e. the company magazine.", value: "e" }, { label: "f. three or four replies.", value: "f" }, { label: "g. two or three telephone calls.", value: "g" }, { label: "h. the office Christmas party with Cynthia.", value: "h" }, { label: "i. a $10 million deal.", value: "i" }, { label: "j. my e-mails.", value: "j" }, { label: "k. lunch with Tom in Accounts.", value: "k" }, { label: "l. tired but happy.", value: "l" }, { label: "m. the weekly departmental meeting.", value: "m" }] },
+            { question: "5. I took", correctAnswer: "e", options: [{ label: "a. the monthly figures to Mr Kazoulis.", value: "a" }, { label: "b. an appointment with a client.", value: "b" }, { label: "c. the minutes of the meeting.", value: "c" }, { label: "d. a representative of the safety committee.", value: "d" }, { label: "e. the company magazine.", value: "e" }, { label: "f. three or four replies.", value: "f" }, { label: "g. two or three telephone calls.", value: "g" }, { label: "h. the office Christmas party with Cynthia.", value: "h" }, { label: "i. a $10 million deal.", value: "i" }, { label: "j. my e-mails.", value: "j" }, { label: "k. lunch with Tom in Accounts.", value: "k" }, { label: "l. tired but happy.", value: "l" }, { label: "m. the weekly departmental meeting.", value: "m" }] },
+            { question: "6. I fixed", correctAnswer: "g", options: [{ label: "a. the monthly figures to Mr Kazoulis.", value: "a" }, { label: "b. an appointment with a client.", value: "b" }, { label: "c. the minutes of the meeting.", value: "c" }, { label: "d. a representative of the safety committee.", value: "d" }, { label: "e. the company magazine.", value: "e" }, { label: "f. three or four replies.", value: "f" }, { label: "g. two or three telephone calls.", value: "g" }, { label: "h. the office Christmas party with Cynthia.", value: "h" }, { label: "i. a $10 million deal.", value: "i" }, { label: "j. my e-mails.", value: "j" }, { label: "k. lunch with Tom in Accounts.", value: "k" }, { label: "l. tired but happy.", value: "l" }, { label: "m. the weekly departmental meeting.", value: "m" }] },
+            { question: "7. I met", correctAnswer: "k", options: [{ label: "a. the monthly figures to Mr Kazoulis.", value: "a" }, { label: "b. an appointment with a client.", value: "b" }, { label: "c. the minutes of the meeting.", value: "c" }, { label: "d. a representative of the safety committee.", value: "d" }, { label: "e. the company magazine.", value: "e" }, { label: "f. three or four replies.", value: "f" }, { label: "g. two or three telephone calls.", value: "g" }, { label: "h. the office Christmas party with Cynthia.", value: "h" }, { label: "i. a $10 million deal.", value: "i" }, { label: "j. my e-mails.", value: "j" }, { label: "k. lunch with Tom in Accounts.", value: "k" }, { label: "l. tired but happy.", value: "l" }, { label: "m. the weekly departmental meeting.", value: "m" }] },
+            { question: "8. I had", correctAnswer: "h", options: [{ label: "a. the monthly figures to Mr Kazoulis.", value: "a" }, { label: "b. an appointment with a client.", value: "b" }, { label: "c. the minutes of the meeting.", value: "c" }, { label: "d. a representative of the safety committee.", value: "d" }, { label: "e. the company magazine.", value: "e" }, { label: "f. three or four replies.", value: "f" }, { label: "g. two or three telephone calls.", value: "g" }, { label: "h. the office Christmas party with Cynthia.", value: "h" }, { label: "i. a $10 million deal.", value: "i" }, { label: "j. my e-mails.", value: "j" }, { label: "k. lunch with Tom in Accounts.", value: "k" }, { label: "l. tired but happy.", value: "l" }, { label: "m. the weekly departmental meeting.", value: "m" }] },
+            { question: "9. I read", correctAnswer: "c", options: [{ label: "a. the monthly figures to Mr Kazoulis.", value: "a" }, { label: "b. an appointment with a client.", value: "b" }, { label: "c. the minutes of the meeting.", value: "c" }, { label: "d. a representative of the safety committee.", value: "d" }, { label: "e. the company magazine.", value: "e" }, { label: "f. three or four replies.", value: "f" }, { label: "g. two or three telephone calls.", value: "g" }, { label: "h. the office Christmas party with Cynthia.", value: "h" }, { label: "i. a $10 million deal.", value: "i" }, { label: "j. my e-mails.", value: "j" }, { label: "k. lunch with Tom in Accounts.", value: "k" }, { label: "l. tired but happy.", value: "l" }, { label: "m. the weekly departmental meeting.", value: "m" }] },
+            { question: "10. I discussed", correctAnswer: "m", options: [{ label: "a. the monthly figures to Mr Kazoulis.", value: "a" }, { label: "b. an appointment with a client.", value: "b" }, { label: "c. the minutes of the meeting.", value: "c" }, { label: "d. a representative of the safety committee.", value: "d" }, { label: "e. the company magazine.", value: "e" }, { label: "f. three or four replies.", value: "f" }, { label: "g. two or three telephone calls.", value: "g" }, { label: "h. the office Christmas party with Cynthia.", value: "h" }, { label: "i. a $10 million deal.", value: "i" }, { label: "j. my e-mails.", value: "j" }, { label: "k. lunch with Tom in Accounts.", value: "k" }, { label: "l. tired but happy.", value: "l" }, { label: "m. the weekly departmental meeting.", value: "m" }] },
+            { question: "11. I presented", correctAnswer: "a", options: [{ label: "a. the monthly figures to Mr Kazoulis.", value: "a" }, { label: "b. an appointment with a client.", value: "b" }, { label: "c. the minutes of the meeting.", value: "c" }, { label: "d. a representative of the safety committee.", value: "d" }, { label: "e. the company magazine.", value: "e" }, { label: "f. three or four replies.", value: "f" }, { label: "g. two or three telephone calls.", value: "g" }, { label: "h. the office Christmas party with Cynthia.", value: "h" }, { label: "i. a $10 million deal.", value: "i" }, { label: "j. my e-mails.", value: "j" }, { label: "k. lunch with Tom in Accounts.", value: "k" }, { label: "l. tired but happy.", value: "l" }, { label: "m. the weekly departmental meeting.", value: "m" }] },
+            { question: "12. I negotiated", correctAnswer: "i", options: [{ label: "a. the monthly figures to Mr Kazoulis.", value: "a" }, { label: "b. an appointment with a client.", value: "b" }, { label: "c. the minutes of the meeting.", value: "c" }, { label: "d. a representative of the safety committee.", value: "d" }, { label: "e. the company magazine.", value: "e" }, { label: "f. three or four replies.", value: "f" }, { label: "g. two or three telephone calls.", value: "g" }, { label: "h. the office Christmas party with Cynthia.", value: "h" }, { label: "i. a $10 million deal.", value: "i" }, { label: "j. my e-mails.", value: "j" }, { label: "k. lunch with Tom in Accounts.", value: "k" }, { label: "l. tired but happy.", value: "l" }, { label: "m. the weekly departmental meeting.", value: "m" }] },
+            { question: "13. I came home", correctAnswer: "l", options: [{ label: "a. the monthly figures to Mr Kazoulis.", value: "a" }, { label: "b. an appointment with a client.", value: "b" }, { label: "c. the minutes of the meeting.", value: "c" }, { label: "d. a representative of the safety committee.", value: "d" }, { label: "e. the company magazine.", value: "e" }, { label: "f. three or four replies.", value: "f" }, { label: "g. two or three telephone calls.", value: "g" }, { label: "h. the office Christmas party with Cynthia.", value: "h" }, { label: "i. a $10 million deal.", value: "i" }, { label: "j. my e-mails.", value: "j" }, { label: "k. lunch with Tom in Accounts.", value: "k" }, { label: "l. tired but happy.", value: "l" }, { label: "m. the weekly departmental meeting.", value: "m" }] },
+        ];
+        
+        const activity4Data = [
+            { question: "My name’s John Power. Power Enterprises belongs to me. I’m the (1)_______ and I also manage the company myself. I’m the (2)_______.", correctAnswer: ["owner", "boss"], options: ["boss", "Chief Executive Officer", "colleague", "customer", "director", "investor", "leader", "manager", "opposite number", "owner", "shareholder", "supplier"] },
+            { question: "I’m John Power’s sister. I sit on the Board of his company. I’m a (3)_______.", correctAnswer: "director", options: ["boss", "Chief Executive Officer", "colleague", "customer", "director", "investor", "leader", "manager", "opposite number", "owner", "shareholder", "supplier"] },
+            { question: "I’m Mr Power’s secretary. He’s my (4)_______.", correctAnswer: "manager", options: ["boss", "Chief Executive Officer", "colleague", "customer", "director", "investor", "leader", "manager", "opposite number", "owner", "shareholder", "supplier"] },
+            { question: "I hold equity in this company. I am a (5)_______.", correctAnswer: "investor", options: ["boss", "Chief Executive Officer", "colleague", "customer", "director", "investor", "leader", "manager", "opposite number", "owner", "shareholder", "supplier"] },
+            { question: "John Power is a friend of mine. I have put some of my own money into Power Enterprises. I’m a (6)_______.", correctAnswer: "shareholder", options: ["boss", "Chief Executive Officer", "colleague", "customer", "director", "investor", "leader", "manager", "opposite number", "owner", "shareholder", "supplier"] },
+            { question: "I buy things from this company. I’m a (7)_______.", correctAnswer: "supplier", options: ["boss", "Chief Executive Officer", "colleague", "customer", "director", "investor", "leader", "manager", "opposite number", "owner", "shareholder", "supplier"] },
+            { question: "This company buys things from me. I’m a (8)_______.", correctAnswer: "customer", options: ["boss", "Chief Executive Officer", "colleague", "customer", "director", "investor", "leader", "manager", "opposite number", "owner", "shareholder", "supplier"] },
+            { question: "I’m the head of a team in the technical department. I’m a (9)_______.", correctAnswer: "colleague", options: ["boss", "Chief Executive Officer", "colleague", "customer", "director", "investor", "leader", "manager", "opposite number", "owner", "shareholder", "supplier"] },
+            { question: "I have lunch every day with the woman at the desk next to mine. She is my (10)_______.", correctAnswer: "colleague", options: ["boss", "Chief Executive Officer", "colleague", "customer", "director", "investor", "leader", "manager", "opposite number", "owner", "shareholder", "supplier"] },
+            { question: "I’m the marketing director of Power Asia Pacific, Jim Poom is the marketing director of Power Europe. He’s my (11)_______.", correctAnswer: "opposite number", options: ["boss", "Chief Executive Officer", "colleague", "customer", "director", "investor", "leader", "manager", "opposite number", "owner", "shareholder", "supplier"] },
+            { question: "I work for Power Enterprises. I head a department of about 50 people. I’m a (12)_______.", correctAnswer: "leader", options: ["boss", "Chief Executive Officer", "colleague", "customer", "director", "investor", "leader", "manager", "opposite number", "owner", "shareholder", "supplier"] },
+            { question: "The company’s most senior executive is the (13)_______.", correctAnswer: "Chief Executive Officer", options: ["boss", "Chief Executive Officer", "colleague", "customer", "director", "investor", "leader", "manager", "opposite number", "owner", "shareholder", "supplier"] },
+        ];
+        
+        const activity5Data = [
+            { question: "Your base _______ will be $500,000 per year.", correctAnswer: "salary", options: ["benefits", "bonus", "car", "expenses", "health insurance", "income", "pension", "rise", "salary", "stock option", "vouchers"] },
+            { question: "When you are 65, you will get a _______ of $400,000 per year.", correctAnswer: "pension", options: ["benefits", "bonus", "car", "expenses", "health insurance", "income", "pension", "rise", "salary", "stock option", "vouchers"] },
+            { question: "But you will get many other _______ as well.", correctAnswer: "benefits", options: ["benefits", "bonus", "car", "expenses", "health insurance", "income", "pension", "rise", "salary", "stock option", "vouchers"] },
+            { question: "A _______ plan gives you shares in the company which you can sell at a profit if the price goes up.", correctAnswer: "stock option", options: ["benefits", "bonus", "car", "expenses", "health insurance", "income", "pension", "rise", "salary", "stock option", "vouchers"] },
+            { question: "You have an expensive company _______.", correctAnswer: "car", options: ["benefits", "bonus", "car", "expenses", "health insurance", "income", "pension", "rise", "salary", "stock option", "vouchers"] },
+            { question: "You have unlimited travel and entertainment _______.", correctAnswer: "expenses", options: ["benefits", "bonus", "car", "expenses", "health insurance", "income", "pension", "rise", "salary", "stock option", "vouchers"] },
+            { question: "You get free _______ which you can use in most restaurants in the city.", correctAnswer: "vouchers", options: ["benefits", "bonus", "car", "expenses", "health insurance", "income", "pension", "rise", "salary", "stock option", "vouchers"] },
+            { question: "And you get a special _______ if the company’s sales go up by more than 15% in the year.", correctAnswer: "bonus", options: ["benefits", "bonus", "car", "expenses", "health insurance", "income", "pension", "rise", "salary", "stock option", "vouchers"] },
+            { question: "So your total _______ next year could be more than a million pounds. Even so, you are thinking about asking for another _______ soon!", correctAnswer: ["income", "rise"], options: ["benefits", "bonus", "car", "expenses", "health insurance", "income", "pension", "rise", "salary", "stock option", "vouchers"] },
+            { question: "And you get a special _______ if the company’s sales go up by more than 15% in the year.", correctAnswer: "health insurance", options: ["benefits", "bonus", "car", "expenses", "health insurance", "income", "pension", "rise", "salary", "stock option", "vouchers"] },
+        ];
+        
+        const activity6Data = [
+            { question: "1. My first J_______ was with Flat Earth Mechanics.", correctAnswer: "My first job was with Flat Earth Mechanics." },
+            { question: "2. I S_______A_______T_______ with them in 1975.", correctAnswer: "I started with them in 1975." },
+            { question: "3. It was just after I had L_______F_______ school.", correctAnswer: "It was just after I had left school." },
+            { question: "4. My first job was in the office but I soon M_______V_______ to the sales department. I knew then that I was born to be a salesman!", correctAnswer: "My first job was in the office but I soon moved to the sales department. I knew then that I was born to be a salesman!" },
+            { question: "5. In 1980 I was P_______O_______O_______E_______ to the position of sales manager.", correctAnswer: "In 1980 I was promoted to the position of sales manager." },
+            { question: "6. But soon after that, the company went through a bad period and most of us were M_______D_______R_______D_______N_______A_______T_______.", correctAnswer: "But soon after that, the company went through a bad period and most of us were made redundant." },
+            { question: "7. It took me two weeks to find another job and at the beginning of 1981 I J_______I_______E_______ Round Earth Mechanics.", correctAnswer: "It took me two weeks to find another job and at the beginning of 1981 I joined Round Earth Mechanics." },
+            { question: "8. This was a much more successful company and in 1990 I was A_______P_______I_______T_______ to the post of national sales manager.", correctAnswer: "This was a much more successful company and in 1990 I was appointed to the post of national sales manager." },
+            { question: "9. Things have been fine since then although I was almost F_______R_______ once for paying my sales people too much commission.", correctAnswer: "Things have been fine since then although I was almost fired once for paying my sales people too much commission." },
+            { question: "10. I have no plans to R_______T_______R_______ before I’m 60.", correctAnswer: "I have no plans to retire before I’m 60." },
+            { question: "11. If someone O_______F_______R_______ me a better job, I will think about it seriously!", correctAnswer: "If someone offers me a better job, I will think about it seriously!" },
         ];
 
+
         // State variables
-        let currentPage = 'intro';
-        const answers = {};
+        const answers1 = {};
+        const answers2 = {};
+        const answers3 = {};
+        const answers4 = {};
+        const answers5 = {};
+        const answers6 = {};
 
         // DOM Elements
         const contentContainer = document.getElementById('content-container');
-        const navButtons = document.getElementById('nav-buttons');
 
-        // Function to render the current page
-        function renderPage() {
-            if (currentPage === 'intro') {
-                contentContainer.innerHTML = `
-                    <div class="flex flex-col items-center justify-center h-full p-4 md:p-8">
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-blue-900 drop-shadow-lg text-center mb-8">
-                            
-                        </h1>
-                        <div class="w-full max-w-2xl bg-white bg-opacity-80 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-105 mb-8">
-                            <img
-                                src="https://johanka2014.github.io/prof_english_tests/prof_eng_banner.png"
-                                alt="Professional English for Business Banner"
-                                class="w-full h-auto object-cover"
-                            />
-                        </div>
-                    </div>
-                `;
-            } else if (currentPage === 'activity-1') {
-                let activityHTML = `
-                    <div class="p-4 md:p-8 flex flex-col items-center justify-center">
-                        <div class="w-full p-6 bg-white bg-opacity-80 rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-105">
-                            <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mb-6">
-                                Activity 1: Fill in the blanks
-                            </h2>
-                            <p class="text-md sm:text-lg text-gray-700 mb-6">
-                                Complete each of the following sentences with <span class="font-semibold text-blue-600">in</span>, <span class="font-semibold text-blue-600">on</span> or <span class="font-semibold text-blue-600">for</span>.
-                            </p>
-                            <div id="questions-container">
-                `;
+        // Render all activities on a single page
+        function renderAllActivities() {
+            renderActivity1();
+            renderActivity2();
+            renderActivity3();
+            renderActivity4();
+            renderActivity5();
+            renderActivity6();
+        }
 
-                activityData.forEach((item, index) => {
-                    activityHTML += `
-                        <div class="flex flex-col mb-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
-                            <p class="text-gray-800 mb-2">
-                                <span class="font-medium mr-2">${index + 1}.</span> ${item.question}
-                            </p>
-                            <div class="flex flex-wrap gap-2" data-index="${index}">
-                                ${item.options.map(option => `
-                                    <button
-                                        onclick="handleAnswerChange(${index}, '${option}')"
-                                        class="px-4 py-2 text-sm sm:text-base rounded-full shadow-md transition-all duration-300 transform
-                                        ${answers[index] === option
-                                            ? 'bg-blue-600 text-white scale-105'
-                                            : 'bg-white text-blue-600 hover:bg-blue-100 hover:scale-105'
-                                        }"
-                                    >
-                                        ${option}
-                                    </button>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `;
-                });
+        // Functions to render each activity
+        function renderActivity1() {
+            const container = document.getElementById('questions-container-1');
+            let activityHTML = '';
 
+            activity1Data.forEach((item, index) => {
                 activityHTML += `
-                            </div>
-                            <button
-                                id="submit-btn"
-                                class="w-full mt-6 py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                                onclick="handleSubmit()"
-                            >
-                                Check Answers
-                            </button>
-                            <div id="results-container" class="hidden"></div>
+                    <div class="flex flex-col mb-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
+                        <p class="text-gray-800 mb-2">
+                            <span class="font-medium mr-2">${index + 1}.</span> ${item.question}
+                        </p>
+                        <div class="flex flex-wrap gap-2" data-index="${index}">
+                            ${item.options.map(option => `
+                                <button
+                                    onclick="handleAnswerChange(1, ${index}, '${option}')"
+                                    class="px-4 py-2 text-sm sm:text-base rounded-full shadow-md transition-all duration-300 transform
+                                    ${answers1[index] === option
+                                        ? 'bg-blue-600 text-white scale-105'
+                                        : 'bg-white text-blue-600 hover:bg-blue-100 hover:scale-105'
+                                    }"
+                                >
+                                    ${option}
+                                </button>
+                            `).join('')}
                         </div>
                     </div>
                 `;
-                contentContainer.innerHTML = activityHTML;
+            });
+            container.innerHTML = activityHTML;
+        }
+
+        function renderActivity2() {
+            const container = document.getElementById('questions-container-2');
+            const words = ["company", "competitors", "customers", "employees", "leader", "products", "profit", "share", "shareholders", "share price", "subsidiaries", "turnover"];
+            let activityHTML = `
+                <div class="flex flex-wrap gap-2 p-3 mb-4 bg-gray-100 rounded-lg border border-gray-200">
+                    ${words.map(word => `<span class="px-3 py-1 bg-gray-200 rounded-full text-sm font-semibold text-gray-700">${word}</span>`).join('')}
+                </div>
+            `;
+            activity2Data.forEach((item, index) => {
+                activityHTML += `
+                    <div class="flex flex-col mb-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
+                        <p class="text-gray-800 mb-2">
+                            <span class="font-medium mr-2">${index + 1}.</span> ${item.question.replace('_______', `
+                                <select onchange="handleAnswerChange(2, ${index}, this.value)" class="p-1 rounded-md border border-gray-300 bg-white text-sm">
+                                    <option value="">Select...</option>
+                                    ${item.options.map(option => `
+                                        <option value="${option}" ${answers2[index] === option ? 'selected' : ''}>${option}</option>
+                                    `).join('')}
+                                </select>
+                            `)}
+                        </p>
+                    </div>
+                `;
+            });
+            container.innerHTML = activityHTML;
+        }
+
+        function renderActivity3() {
+            const container = document.getElementById('questions-container-3');
+            let activityHTML = '';
+            activity3Data.forEach((item, index) => {
+                activityHTML += `
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
+                        <p class="text-gray-800 font-medium mb-2 md:mb-0 mr-4">
+                            ${item.question}
+                        </p>
+                        <select onchange="handleAnswerChange(3, ${index}, this.value)" class="p-2 rounded-md border border-gray-300 bg-white text-sm">
+                            <option value="">Select...</option>
+                            ${item.options.map(option => `
+                                <option value="${option.value}" ${answers3[index] === option.value ? 'selected' : ''}>${option.label}</option>
+                            `).join('')}
+                        </select>
+                    </div>
+                `;
+            });
+            container.innerHTML = activityHTML;
+        }
+
+        function renderActivity4() {
+            const container = document.getElementById('questions-container-4');
+            const words = ["boss", "Chief Executive Officer", "colleague", "customer", "director", "investor", "leader", "manager", "opposite number", "owner", "shareholder", "supplier"];
+            let activityHTML = `
+                <div class="flex flex-wrap gap-2 p-3 mb-4 bg-gray-100 rounded-lg border border-gray-200">
+                    ${words.map(word => `<span class="px-3 py-1 bg-gray-200 rounded-full text-sm font-semibold text-gray-700">${word}</span>`).join('')}
+                </div>
+                <!-- Combined Question for John Power -->
+                <div class="flex flex-col mb-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
+                    <p class="text-gray-800 mb-2">
+                        My name’s John Power. Power Enterprises belongs to me. I’m the (1)
+                        <select onchange="handleAnswerChange(4, 0, this.value)" class="p-1 rounded-md border border-gray-300 bg-white text-sm">
+                            <option value="">Select...</option>
+                            ${activity4Data[0].options.map(option => `
+                                <option value="${option}" ${answers4[0] === option ? 'selected' : ''}>${option}</option>
+                            `).join('')}
+                        </select>
+                        and I also manage the company myself. I’m the (2)
+                        <select onchange="handleAnswerChange(4, 1, this.value)" class="p-1 rounded-md border border-gray-300 bg-white text-sm">
+                            <option value="">Select...</option>
+                            ${activity4Data[0].options.map(option => `
+                                <option value="${option}" ${answers4[1] === option ? 'selected' : ''}>${option}</option>
+                            `).join('')}
+                        </select>.
+                    </p>
+                </div>
+            `;
+            // Rest of the questions
+            activityHTML += activity4Data.slice(1).map((item, index) => `
+                <div class="flex flex-col mb-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
+                    <p class="text-gray-800 mb-2">
+                        <span class="font-medium mr-2">(${index + 3}).</span> ${item.question.split(" ").slice(5).join(" ").replace('_______', `
+                            <select onchange="handleAnswerChange(4, ${index + 2}, this.value)" class="p-1 rounded-md border border-gray-300 bg-white text-sm">
+                                <option value="">Select...</option>
+                                ${item.options.map(option => `
+                                    <option value="${option}" ${answers4[index + 2] === option ? 'selected' : ''}>${option}</option>
+                                `).join('')}
+                            </select>
+                        `)}
+                    </p>
+                </div>
+            `).join('');
+            container.innerHTML = activityHTML;
+        }
+
+        function renderActivity5() {
+            const container = document.getElementById('questions-container-5');
+            const words = ["benefits", "bonus", "car", "expenses", "health insurance", "income", "pension", "rise", "salary", "stock option", "vouchers"];
+            let activityHTML = `
+                <div class="flex flex-wrap gap-2 p-3 mb-4 bg-gray-100 rounded-lg border border-gray-200">
+                    ${words.map(word => `<span class="px-3 py-1 bg-gray-200 rounded-full text-sm font-semibold text-gray-700">${word}</span>`).join('')}
+                </div>
+            `;
+            activity5Data.forEach((item, index) => {
+                activityHTML += `
+                    <div class="flex flex-col mb-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
+                        <p class="text-gray-800 mb-2">
+                            <span class="font-medium mr-2">${index + 1}.</span> ${item.question.replace('_______', `
+                                <select onchange="handleAnswerChange(5, ${index}, this.value)" class="p-1 rounded-md border border-gray-300 bg-white text-sm">
+                                    <option value="">Select...</option>
+                                    ${item.options.map(option => `
+                                        <option value="${option}" ${answers5[index] === option ? 'selected' : ''}>${option}</option>
+                                    `).join('')}
+                                </select>
+                            `)}
+                        </p>
+                    </div>
+                `;
+            });
+            container.innerHTML = activityHTML;
+        }
+        
+        function renderActivity6() {
+            const container = document.getElementById('questions-container-6');
+            let activityHTML = '';
+            activity6Data.forEach((item, index) => {
+                const questionNumber = index + 1;
+                activityHTML += `
+                    <div class="flex flex-col mb-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
+                        <p class="text-gray-800 mb-2">
+                            ${item.question}
+                        </p>
+                        <textarea
+                            id="answer-6-${index}"
+                            class="p-2 w-full h-16 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            oninput="handleInputChange(6, ${index}, this.value)"
+                            placeholder="Write the full sentence here..."
+                        >${answers6[index] || ''}</textarea>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = activityHTML;
+        }
+
+
+        // Handle button clicks
+        function handleAnswerChange(activityNum, index, value) {
+            if (activityNum === 1) {
+                answers1[index] = value;
+                updateButtonStyles(1);
+            } else if (activityNum === 2) {
+                answers2[index] = value;
+            } else if (activityNum === 3) {
+                answers3[index] = value;
+            } else if (activityNum === 4) {
+                if (index === 0) {
+                     answers4[0] = value;
+                } else if (index === 1) {
+                     answers4[1] = value;
+                } else {
+                     answers4[index] = value;
+                }
+            } else if (activityNum === 5) {
+                answers5[index] = value;
             }
         }
 
-        // Handle button clicks
-        function handleAnswerChange(index, value) {
-            answers[index] = value;
-            updateButtonStyles();
+        // Handle input change for activity 6
+        function handleInputChange(activityNum, questionIndex, value) {
+            if (activityNum === 6) {
+                answers6[questionIndex] = value;
+            }
         }
 
-        // Update button styles based on selected answer
+
+        // Update button styles for Activity 1
         function updateButtonStyles() {
-            const questions = document.getElementById('questions-container').querySelectorAll('div[data-index]');
+            const questions = document.getElementById('questions-container-1').querySelectorAll('div[data-index]');
             questions.forEach(questionDiv => {
                 const index = parseInt(questionDiv.dataset.index, 10);
                 const buttons = questionDiv.querySelectorAll('button');
                 buttons.forEach(button => {
                     const option = button.textContent.trim();
-                    if (answers[index] === option) {
+                    if (answers1[index] === option) {
                         button.classList.add('bg-blue-600', 'text-white', 'scale-105');
                         button.classList.remove('bg-white', 'text-blue-600', 'hover:bg-blue-100');
                     } else {
@@ -197,33 +484,148 @@
         }
 
         // Handle submission and show results
-        function handleSubmit() {
+        function handleSubmit(activityNum) {
             let score = 0;
-            const resultsContainer = document.getElementById('results-container');
+            let resultsContainer, activityData, answers;
+
+            if (activityNum === 1) {
+                resultsContainer = document.getElementById('results-container-1');
+                activityData = activity1Data;
+                answers = answers1;
+            } else if (activityNum === 2) {
+                resultsContainer = document.getElementById('results-container-2');
+                activityData = activity2Data;
+                answers = answers2;
+            } else if (activityNum === 3) {
+                resultsContainer = document.getElementById('results-container-3');
+                activityData = activity3Data;
+                answers = answers3;
+            } else if (activityNum === 4) {
+                resultsContainer = document.getElementById('results-container-4');
+                activityData = activity4Data;
+                answers = answers4;
+            } else if (activityNum === 5) {
+                resultsContainer = document.getElementById('results-container-5');
+                activityData = activity5Data;
+                answers = answers5;
+            } else if (activityNum === 6) {
+                resultsContainer = document.getElementById('results-container-6');
+                activityData = activity6Data;
+                answers = answers6;
+            }
+
             let resultsHTML = `
                 <div class="mt-8 p-6 bg-blue-100 rounded-3xl shadow-inner">
                     <h3 class="text-xl font-bold text-blue-800 mb-4">Your Results</h3>
             `;
-            const questionsContainer = document.getElementById('questions-container');
-
-            activityData.forEach((item, index) => {
-                const userAnswer = answers[index];
-                const isCorrect = userAnswer === item.correctAnswer;
-                if (isCorrect) {
-                    score += 1;
-                }
+            
+            if (activityNum === 4) {
+                const combinedQuestion = activity4Data[0];
+                const isCombinedCorrect = answers[0] === combinedQuestion.correctAnswer[0] && answers[1] === combinedQuestion.correctAnswer[1];
+                if (isCombinedCorrect) score += 2;
+                
                 resultsHTML += `
-                    <div class="p-3 rounded-lg shadow-sm flex items-center mb-2 ${isCorrect ? 'bg-green-100' : 'bg-red-100'}">
-                        <span class="font-medium mr-2">${index + 1}.</span>
-                        <span class="${isCorrect ? 'text-green-600' : 'text-red-600'}">
-                            Your answer: ${userAnswer || 'No Answer'}. Correct answer: ${item.correctAnswer}
+                    <div class="p-3 rounded-lg shadow-sm flex items-center mb-2 ${isCombinedCorrect ? 'bg-green-100' : 'bg-red-100'}">
+                        <span class="font-medium mr-2">1. & 2.</span>
+                        <span class="${isCombinedCorrect ? 'text-green-600' : 'text-red-600'}">
+                            Your answers: ${answers[0] || 'No Answer'}, ${answers[1] || 'No Answer'}. Correct answers: ${combinedQuestion.correctAnswer[0]}, ${combinedQuestion.correctAnswer[1]}
                         </span>
                     </div>
                 `;
-            });
+
+                for (let i = 1; i < activityData.length; i++) {
+                    const item = activityData[i];
+                    const userAnswer = answers[i + 1];
+                    const isCorrect = userAnswer === item.correctAnswer;
+                    if (isCorrect) score += 1;
+                    resultsHTML += `
+                        <div class="p-3 rounded-lg shadow-sm flex items-center mb-2 ${isCorrect ? 'bg-green-100' : 'bg-red-100'}">
+                            <span class="font-medium mr-2">${i + 2}.</span>
+                            <span class="${isCorrect ? 'text-green-600' : 'text-red-600'}">
+                                Your answer: ${userAnswer || 'No Answer'}. Correct answer: ${item.correctAnswer}
+                            </span>
+                        </div>
+                    `;
+                }
+
+            } else if (activityNum === 6) {
+                for (let i = 0; i < activityData.length; i++) {
+                    const item = activityData[i];
+                    const userAnswer = answers[i];
+                    const isCorrect = (userAnswer || '').trim().toLowerCase() === item.correctAnswer.toLowerCase();
+                    if (isCorrect) {
+                        score += 1;
+                    }
+                    resultsHTML += `
+                        <div class="p-3 rounded-lg shadow-sm flex flex-col items-start mb-2 ${isCorrect ? 'bg-green-100' : 'bg-red-100'}">
+                            <p class="font-medium mb-1">${i + 1}.</p>
+                            <p class="${isCorrect ? 'text-green-600' : 'text-red-600'}">
+                                <b>Your answer:</b> ${userAnswer || 'No Answer'}
+                            </p>
+                            <p class="text-gray-700">
+                                <b>Correct answer:</b> ${item.correctAnswer}
+                            </p>
+                        </div>
+                    `;
+                }
+            } else if (activityNum === 5) {
+                const combinedQuestion = activity5Data[8]; // Combined question for income and rise
+                let isCorrect = true;
+                if (answers[8] === combinedQuestion.correctAnswer[0] && answers[9] === combinedQuestion.correctAnswer[1]) {
+                    score += 2;
+                    isCorrect = true;
+                } else {
+                    isCorrect = false;
+                }
+
+                resultsHTML += `
+                    <div class="p-3 rounded-lg shadow-sm flex items-center mb-2 ${isCorrect ? 'bg-green-100' : 'bg-red-100'}">
+                        <span class="font-medium mr-2">9.</span>
+                        <span class="${isCorrect ? 'text-green-600' : 'text-red-600'}">
+                            Your answer: ${answers[8] || 'No Answer'}, ${answers[9] || 'No Answer'}. Correct answers: ${combinedQuestion.correctAnswer[0]}, ${combinedQuestion.correctAnswer[1]}
+                        </span>
+                    </div>
+                `;
+
+                activity5Data.slice(0, 8).forEach((item, index) => {
+                    const userAnswer = answers[index];
+                    const isCorrect = userAnswer === item.correctAnswer;
+                    if (isCorrect) {
+                        score += 1;
+                    }
+                    resultsHTML += `
+                        <div class="p-3 rounded-lg shadow-sm flex items-center mb-2 ${isCorrect ? 'bg-green-100' : 'bg-red-100'}">
+                            <span class="font-medium mr-2">${index + 1}.</span>
+                            <span class="${isCorrect ? 'text-green-600' : 'text-red-600'}">
+                                Your answer: ${userAnswer || 'No Answer'}. Correct answer: ${item.correctAnswer}
+                            </span>
+                        </div>
+                    `;
+                });
+                const totalScore = activity5Data.length;
+                
+            } else {
+                activityData.forEach((item, index) => {
+                    const userAnswer = answers[index];
+                    const isCorrect = userAnswer === item.correctAnswer;
+                    if (isCorrect) {
+                        score += 1;
+                    }
+                    resultsHTML += `
+                        <div class="p-3 rounded-lg shadow-sm flex items-center mb-2 ${isCorrect ? 'bg-green-100' : 'bg-red-100'}">
+                            <span class="font-medium mr-2">${index + 1}.</span>
+                            <span class="${isCorrect ? 'text-green-600' : 'text-red-600'}">
+                                Your answer: ${userAnswer || 'No Answer'}. Correct answer: ${item.correctAnswer}
+                            </span>
+                        </div>
+                    `;
+                });
+            }
+            
+            const totalScore = (activityNum === 4) ? 12 : (activityNum === 5) ? 10 : activityData.length;
             resultsHTML += `
                 <p class="text-lg text-gray-700 mt-4">
-                    You scored <span class="font-extrabold text-2xl text-blue-900">${score}</span> out of ${activityData.length}.
+                    You scored <span class="font-extrabold text-2xl text-blue-900">${score}</span> out of ${totalScore}.
                 </p>
                 </div>
             `;
@@ -231,27 +633,8 @@
             resultsContainer.classList.remove('hidden');
         }
 
-        // Event listeners for navigation
-        document.getElementById('intro-btn').addEventListener('click', () => {
-            currentPage = 'intro';
-            renderPage();
-            document.getElementById('intro-btn').classList.add('bg-blue-600', 'text-white', 'shadow-lg', 'scale-105');
-            document.getElementById('intro-btn').classList.remove('bg-blue-200', 'text-blue-800', 'hover:bg-blue-300');
-            document.getElementById('activity1-btn').classList.add('bg-blue-200', 'text-blue-800', 'hover:bg-blue-300');
-            document.getElementById('activity1-btn').classList.remove('bg-blue-600', 'text-white', 'shadow-lg', 'scale-105');
-        });
-
-        document.getElementById('activity1-btn').addEventListener('click', () => {
-            currentPage = 'activity-1';
-            renderPage();
-            document.getElementById('activity1-btn').classList.add('bg-blue-600', 'text-white', 'shadow-lg', 'scale-105');
-            document.getElementById('activity1-btn').classList.remove('bg-blue-200', 'text-blue-800', 'hover:bg-blue-300');
-            document.getElementById('intro-btn').classList.add('bg-blue-200', 'text-blue-800', 'hover:bg-blue-300');
-            document.getElementById('intro-btn').classList.remove('bg-blue-600', 'text-white', 'shadow-lg', 'scale-105');
-        });
-
         // Initial render
-        renderPage();
+        window.onload = renderAllActivities;
     </script>
 </body>
 </html>
